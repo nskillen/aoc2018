@@ -3,8 +3,14 @@ require 'fileutils'
 day = lambda do |d|
 	<<~EOF
 		require_relative 'day'
+		require 'io/console'
 
 		class #{d.upcase} < Day
+
+			def wait
+				puts "Press any key to continue..."
+				STDIN.getch
+			end
 
 			def part_one
 
